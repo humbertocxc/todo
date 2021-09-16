@@ -21,6 +21,7 @@ export function TaskList() {
       title: newTaskTitle,                            //da lista para não ocorrerem repetições de ids, o nome contido
       isComplete: false,                              //no state newTaskTitle e o isComplete começando como falso
     }])
+    setNewTaskTitle('')
   }
 
   function handleToggleTaskCompletion(id: number) {   //para a atualização de status do isComplete, a função
