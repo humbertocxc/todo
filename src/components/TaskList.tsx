@@ -14,7 +14,8 @@ export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
-  function handleCreateNewTask() {                    //aqui chamo a função setTasks para a nova lista ser criada
+  function handleCreateNewTask() {                    //para a adição de uma task, primeiro testo se foi enviado um texto, 
+    if (!newTaskTitle) return;                        //depois chamo a função setTasks para a nova lista ser criada
     setTasks([...tasks, {                             //ela recebe a listagem dos itens já existentes na lista tasks
       id: tasks.length,                               //e um novo objeto {} do tipo Task, que tem como id o tamanho
       title: newTaskTitle,                            //da lista para não ocorrerem repetições de ids, o nome contido
